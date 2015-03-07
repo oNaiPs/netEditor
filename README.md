@@ -12,6 +12,13 @@ make
 ./neteditor
 ```
 
+## TODO
+There is so much to do, i don't know where to start...
+* Unit tests (really, all kinds of tests)
+* Prebuilt packages (Travis anyone?)
+* Define coding style
+* ...
+
 ## Contributing
 Everybody is more than welcome to contribute to this project.
 
