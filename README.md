@@ -16,4 +16,4 @@ make
 Everybody is more than welcome to contribute to this project.
 
 ## Authors
-Jose Pereira <onaips@gmail.com>
+Jose Pereira
