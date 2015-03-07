@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>OpenLayers Demo</title>
+    <style type="text/css">
+      html, body, #basicMap {
+          width: 100%;
+          height: 100%;
+          margin: 0;
+      }
+    </style>
+<!--     <script src="http://www.openlayers.org/api/OpenLayers.js"></script> -->
+ <script src="http://openlayers.org/api/2.11/OpenLayers.js"></script> 
+    <script>
+	var epsg4326 = new OpenLayers.Projection("EPSG:4326");
+
+      function init() {
+        map = new OpenLayers.Map("basicMap");
+        var mapnik = new OpenLayers.Layer.OSM();
+        map.addLayer(mapnik);
+        map.setCenter(new OpenLayers.LonLat(-8.6262,41.1992) // Center of the map
+          .transform(
+            new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+            new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+          ), 15 // Zoom level
+        );
+      }
+
+      function getMapExtents()
+      {
+	return map.getExtent().clone().transform(map.getProjectionObject(), epsg4326);
+      }
+
+      function getLeft()
+      {
+	var extents = getMapExtents();
+	return extents.left;
+      }
+
+      function getRight()
+      {
+	var extents = getMapExtents();
+	return extents.right;
+      }
+
+      function getTop()
+      {
+	var extents = getMapExtents();
+	return extents.top;
+      }
+
+      function getBottom()
+      {
+	var extents = getMapExtents();
+	return extents.bottom;
+      }
+
+    </script>
+  </head>
+  <body onload="init();">
+    <div id="basicMap"></div>
+  </body>
+</html>

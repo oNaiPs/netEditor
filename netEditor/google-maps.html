@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" style="height:100%">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Google Maps</title>
+    <script src="http://maps.google.com/maps?file=api&amp;v=3&amp;key=ABQIAAAAWLum5vk5NiE8d-aXKCA5xRSRmQ47K0CxAJRLGt8w7kn3Axv9rhSTpMWrWKPSuP7bIyiPc0oB6q3BJA" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    var map = null;
+    var geocoder = null;
+
+
+    function initialize() {
+	if (GBrowserIsCompatible()) { 
+	
+		map = new GMap2(document.getElementById("map"));
+		map.setCenter(new GLatLng(41.147727,-8.640640),16);
+		
+		//map.enableScrollWheelZoom();
+		//map.setMapType(G_SATELLITE_MAP);
+		//map.addControl(new GLargeMapControl());
+		map.addControl(new GMapTypeControl());
+		map.addControl(new GScaleControl());
+		geocoder = new GClientGeocoder()
+		//map.disableDragging();
+		//map.disableContinuousZoom();
+	}
+    }
+
+
+    function showAddress(address) {
+      if (geocoder) {
+        geocoder.getLatLng(
+          address,
+          function(point) {
+            if (!point) {
+              alert(address + " not found");
+            } else {
+              map.setCenter(point, 17);
+            }
+          }
+        );
+      }
+    }
+
+    </script>
+  </head>
+  <body onload="initialize()"  onunload="GUnload()" style="height:100%;margin:0">
+
+    <div id="map" style="width: 100%; height: 100%;"></div>
+  
+  </body>
+
+</html>
+
+
+
+

@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/hand.png</file>
+        <file>images/line.png</file>
+        <file>images/microedition.png</file>
+        <file>images/mousecursor.png</file>
+        <file>images/pointer.png</file>
+        <file>images/polyline.png</file>
+        <file>images/rectselect.png</file>
+        <file>images/rubber.png</file>
+        <file>images/induction_loop.png</file>
+        <file>google-maps.html</file>
+        <file>images/icon.png</file>
+    </qresource>
+</RCC>
