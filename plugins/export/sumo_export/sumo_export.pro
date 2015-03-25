@@ -2,15 +2,15 @@ CONFIG += plugin
 TEMPLATE = lib
 TARGET = $$qtLibraryTarget(sumo_export)
 INCLUDEPATH += ../../.. \
-    ../../../netEditor/src \
-    ../../../netEditor/src/objects \
-    ../../../netEditor/src/gui
+    ../../../app/src \
+    ../../../app/src/objects \
+    ../../../app/src/gui
 HEADERS += \
-    ../../../netEditor/src/gui/graphicsScene.h \
-    ../../../netEditor/src/objects/lane.h \
-    ../../../netEditor/src/objects/point.h \
-    ../../../netEditor/src/objects/segment.h \
-    ../../../netEditor/src/objects/object.h \
+    ../../../app/src/gui/graphicsScene.h \
+    ../../../app/src/objects/lane.h \
+    ../../../app/src/objects/point.h \
+    ../../../app/src/objects/segment.h \
+    ../../../app/src/objects/object.h \
     sumo_export.h \
     edges_writer.h \
     nodes_writer.h \
@@ -20,14 +20,14 @@ HEADERS += \
     cfg_writer.h \
     induction_loops_sumo.h
 SOURCES += \
-    ../../../netEditor/src/objects/point.cpp \
-    ../../../netEditor/src/objects/segment.cpp \
-    ../../../netEditor/src/gui/graphicsScene.cpp \
-    ../../../netEditor/src/objects/lane.cpp \
-    ../../../netEditor/src/common.cpp \
-    ../../../netEditor/src/objects/manouvre.cpp \
-    ../../../netEditor/src/objects/road.cpp \
-    ../../../netEditor/src/objects/object.cpp \
+    ../../../app/src/objects/point.cpp \
+    ../../../app/src/objects/segment.cpp \
+    ../../../app/src/gui/graphicsScene.cpp \
+    ../../../app/src/objects/lane.cpp \
+    ../../../app/src/common.cpp \
+    ../../../app/src/objects/manouvre.cpp \
+    ../../../app/src/objects/road.cpp \
+    ../../../app/src/objects/object.cpp \
     sumo_export.cpp \
     edges_writer.cpp \
     nodes_writer.cpp \
