@@ -12,6 +12,12 @@ make
 ./neteditor
 ```
 
+### on Linux
+this won't compile on the command line...
+* there is some leftover problem with `macx-clang-libc++`
+ 
+It does however qmake, build and more or less work when loaded as QT creator projects with Qt4
+
 ## TODO
 There is so much to do, i don't know where to start...
 * Unit tests (really, all kinds of tests)
