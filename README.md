@@ -13,7 +13,7 @@ make
 ```
 
 ### on Linux
-* there is some QT version problem with `macx-clang-libc++` if you dont enforce the use of Qt4, since on Ubuntu 14.10 Qt5 is used as default.
+* since on Ubuntu 14.10 Qt5 is used as default you need to enforce the use of Qt4.
 
 #### the app
 can be compiled with
@@ -24,9 +24,9 @@ make
 ```
 
 #### the plugins
-won't compile on the command line...
- 
-It does however qmake, build and more or less work when loaded as QT creator projects with Qt4
+* won't compile on the command line...
+  qmake in the `plugin/` directory will result in separate plugin subfolder problems of the **`macx-clang-libc++`** flavor
+* It does however qmake, build and more or less work when loaded as **QT creator** projects with Qt4
 
 
 ## TODO
