@@ -4,7 +4,7 @@ TARGET = $$qtLibraryTarget(example_export)
 HEADERS += example_export.h
 SOURCES += example_export.cpp
 DESTDIR = ../../../netEditor/plugins
-INCLUDEPATH += ../../../netEditor \
-               ../../../netEditor/src \
-               ../../../netEditor/src/objects \
-               ../../../netEditor/src/gui
+INCLUDEPATH += ../../../app \
+               ../../../app/src \
+               ../../../app/src/objects \
+               ../../../app/src/gui
