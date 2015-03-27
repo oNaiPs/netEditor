@@ -135,15 +135,16 @@ void centralGraphicsView::scaleView(qreal sF, QPointF mouse)
 
     //Center the view in the mouse position
     //the factor 0.7 is to smooth the zoom shifting
-    centerOn(mouse);
-
+    /* there is a flaw.
+     * zooming should somewhat focus on the mouse pointer when going in
+     * but stay with the center of the view when going out
+     */
+    if (sF >= 1.0)      centerOn(mouse);
+    else {};
 
     //translate(mouse.x(), mouse.y());
     //setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
-
     scale(sF, sF);
-
-
 
     scaleFactor /= sF;
 }
@@ -156,6 +157,7 @@ void centralGraphicsView::wheelEvent(QWheelEvent * event)
     //TODO USE <QGraphicsItemAnimation> for google maps animation like
     
     //ZOOM
+    // TODO:
     scaleView(pow((double) 2, event->delta() / 480.0),  mapToScene(event->pos()));
 
     QString zoom=QString::number(1 / scaleFactor * 100, 0, 0) + QString('%');
