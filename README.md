@@ -13,6 +13,8 @@ make
 ```
 
 ### on Linux
+
+the fork https://github.com/Qu-Bit/netEditor will be mostly concerned with getting this software working on Linux (Ubuntu 14.10 and debian/testing)
 * since on Ubuntu 14.10 Qt5 is used as default you need to enforce the use of Qt4.
 
 #### the app
