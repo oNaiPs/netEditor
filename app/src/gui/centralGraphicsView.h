@@ -46,7 +46,7 @@ class centralGraphicsView: public QGraphicsView
     EDITIONMODE currentEditionMode;
     OVERLAYMODE currentOverlayMode;
 
-    void scaleView(qreal, QPointF);
+    void scaleView(qreal, QPoint mousePos);
 
     QDockWidget *dock;
 

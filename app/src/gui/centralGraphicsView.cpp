@@ -126,25 +126,23 @@ void centralGraphicsView::generateAxis()
     scene()->addItem(tmp1);
 }
 
-void centralGraphicsView::scaleView(qreal sF, QPointF mouse)
+void centralGraphicsView::scaleView(qreal sF, QPoint mousePos)
 {
-    //TODO is this right?
+    // TODO is this right?
     qreal factor = matrix().scale(sF, sF).mapRect(QRectF(0, 0, 1, 1)).width();
+    // respecting some zoom level limits
     if (factor < 0.07 || factor > 100)
         return;
 
-    //Center the view in the mouse position
-    //the factor 0.7 is to smooth the zoom shifting
-    /* there is a flaw.
-     * zooming should somewhat focus on the mouse pointer when going in
-     * but stay with the center of the view when going out
-     */
-    if (sF >= 1.0)      centerOn(mouse);
-    else {};
+    QPointF scene_mousePos(mapToScene(mousePos));
 
-    //translate(mouse.x(), mouse.y());
+    // will only be respected with scrollbars active:
     //setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
     scale(sF, sF);
+    // difference of scene pos to before the scaling
+    scene_mousePos -= mapToScene(mousePos);
+    // shift back by that difference
+    translate(-scene_mousePos.x(), -scene_mousePos.y());
 
     scaleFactor /= sF;
 }
@@ -156,9 +154,11 @@ void centralGraphicsView::wheelEvent(QWheelEvent * event)
     
     //TODO USE <QGraphicsItemAnimation> for google maps animation like
     
-    //ZOOM
-    // TODO:
-    scaleView(pow((double) 2, event->delta() / 480.0),  mapToScene(event->pos()));
+    // ZOOM
+    /* event.delta:     + IN; - OUT
+     * event.pos:       relative to widget
+     */
+    scaleView(pow((double) 2, event->delta() / 480.0),  event->pos());
 
     QString zoom=QString::number(1 / scaleFactor * 100, 0, 0) + QString('%');
     showOnLabel3(zoom);
@@ -959,7 +959,8 @@ void centralGraphicsView::startPanMode()
 
 QRectF centralGraphicsView::visibleRegion()
 {
-    return QRectF(mapToScene(0, 0).x(), mapToScene(0, 0).y(), width()
+    QPointF sceneZero = mapToScene(0, 0);
+    return QRectF(sceneZero.x(), sceneZero.y(), width()
                   * scaleFactor, height() * scaleFactor);
 }
 
