@@ -8,7 +8,7 @@ INCLUDEPATH += ../../../app \
                ../../../app/src/gui
 
 HEADERS += \
-            ../../../app/src/GUI/graphicsScene.h \
+            ../../../app/src/gui/graphicsScene.h \
             ../../../app/src/objects/lane.h \
             ../../../app/src/objects/segment.h \
             ../../../app/src/objects/point.h \
