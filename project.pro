@@ -1,3 +1,4 @@
-TEMPLATE      = subdirs
-SUBDIRS       += app\
-                plugins
+TEMPLATE = subdirs
+SUBDIRS +=
+    app\
+    plugins
