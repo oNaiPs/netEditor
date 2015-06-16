@@ -17,6 +17,4 @@ win32:LIBS += "C:/Programas/PostgreSQL/8.4/lib/libpq.dll"
 unix:LIBS += -lpq
 win32:INCLUDEPATH += "C:\Programas\PostgreSQL\8.4\include"
 
-
-DESTDIR = ../../../netEditor/plugins
-
+DESTDIR = ../../../app/plugins
