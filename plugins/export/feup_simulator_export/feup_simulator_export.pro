@@ -32,6 +32,4 @@ SOURCES += \
            XMLTripAssignmentWriter.cpp \
            realRoad.cpp \
            feup_simulator_export.cpp
-DESTDIR = ../../../netEditor/plugins
-
-
+DESTDIR = ../../../app/plugins

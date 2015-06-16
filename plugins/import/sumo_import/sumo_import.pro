@@ -29,4 +29,4 @@ SOURCES += \
       edges_reader.cpp \
       nodes_reader.cpp \
       connections_reader.cpp
-DESTDIR = ../../../netEditor/plugins
+DESTDIR = ../../../app/plugins

@@ -36,4 +36,4 @@ SOURCES += \
     demand_writer.cpp \
     cfg_writer.cpp \
     induction_loops_sumo.cpp
-DESTDIR = ../../../netEditor/plugins
+DESTDIR = ../../../app/plugins

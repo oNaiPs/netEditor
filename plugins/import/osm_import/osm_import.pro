@@ -28,7 +28,7 @@ SOURCES += osm_import.cpp \
     ../../../netEditor/src/objects/lane.cpp \
     ../../../netEditor/src/common.cpp
 
-DESTDIR = ../../../netEditor/plugins
-
 RESOURCES += \
     resources.qrc
+
+DESTDIR = ../../../app/plugins

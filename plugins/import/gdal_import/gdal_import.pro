@@ -25,7 +25,6 @@ SOURCES += gdal_import.cpp \
     ../../../netEditor/src/objects/object.cpp \
     ../../../netEditor/src/gui/graphicsScene.cpp \
     ../../../netEditor/src/common.cpp
-DESTDIR = ../../../netEditor/plugins
 unix:LIBS += -lgdal1.7.0
 win32: LIBS+= c:/gdal/bin/gdal17.dll
-
+DESTDIR = ../../../app/plugins

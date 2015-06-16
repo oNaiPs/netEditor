@@ -3,7 +3,7 @@ TEMPLATE = lib
 TARGET = $$qtLibraryTarget(example_export)
 HEADERS += example_export.h
 SOURCES += example_export.cpp
-DESTDIR = ../../../netEditor/plugins
+DESTDIR = ../../../app/plugins
 INCLUDEPATH += ../../../app \
                ../../../app/src \
                ../../../app/src/objects \
