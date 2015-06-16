@@ -4,7 +4,7 @@ QT += \
     webkitwidgets
 TEMPLATE = app
 TARGET = neteditor
-DEPENDPATH +=
+DEPENDPATH += \
     . \
     src \
     src/gui \
@@ -23,7 +23,8 @@ INCLUDEPATH +=
     src/gui/plugins
 
 # Input
-HEADERS += src/config.h \
+HEADERS += \
+    src/config.h \
     src/iface.h \
     src/common.h \
     src/objects/lane.h \
