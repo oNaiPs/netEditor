@@ -1,5 +1,7 @@
 # netEditor
 
+[![Build Status](https://travis-ci.org/oNaiPs/netEditor.svg?branch=master)](https://travis-ci.org/oNaiPs/netEditor)
+
 Traffic network road editor, implemented as a proof of concept.
 
 Example usage - https://www.youtube.com/watch?v=KgPSREMmA_0
