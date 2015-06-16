@@ -13,7 +13,7 @@ DEPENDPATH += \
     src/gui/editorSettings \
     src/gui/modifiedWidgets \
     src/gui/plugins
-INCLUDEPATH +=
+INCLUDEPATH += \
     . \
     src/gui \
     src/ \
